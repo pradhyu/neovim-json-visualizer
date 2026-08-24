@@ -1,0 +1,127 @@
+*json_tsdb_plot.txt*  JSON Time Series Data Plot for Neovim
+
+Author: json-tsdb-plot.nvim
+License: MIT
+
+==============================================================================
+CONTENTS                                              *json-tsdb-plot-contents*
+
+1. Introduction ........................ |json-tsdb-plot-introduction|
+2. Commands ............................ |json-tsdb-plot-commands|
+3. Configuration ....................... |json-tsdb-plot-configuration|
+4. Config File API ..................... |json-tsdb-plot-config-api|
+5. Keybindings ......................... |json-tsdb-plot-keybindings|
+6. Development ......................... |json-tsdb-plot-development|
+
+==============================================================================
+1. INTRODUCTION                                  *json-tsdb-plot-introduction*
+
+json-tsdb-plot.nvim renders interactive ASCII Gantt charts from JSON data
+files. Define multiple plot series with a fluent Lua config API, each with
+its own data source, field mappings, colors, and tags.
+
+Primary use case: medical/pharmacy data analysis (admissions, prescriptions,
+care coordination timelines).
+
+==============================================================================
+2. COMMANDS                                          *json-tsdb-plot-commands*
+
+                                                                    *:TsdbPlot*
+:TsdbPlot {data.json} [{config.lua}]
+    Open a timeline chart from a JSON data file. If {config.lua} is not
+    provided, looks for `.tsdb_plot.lua` in the same directory as the data
+    file, or falls back to interactive field selection via |vim.ui.select|.
+
+                                                              *:TsdbPlotReload*
+:TsdbPlotReload
+    Hot-reload all plugin modules. Clears Lua module caches and re-requires
+    all json_tsdb_plot modules. Use during development to pick up code
+    changes without restarting Neovim.
+
+==============================================================================
+3. CONFIGURATION                                *json-tsdb-plot-configuration*
+
+Call `setup()` in your init.lua: >lua
+    require("json_tsdb_plot").setup({
+      -- optional overrides
+    })
+<
+
+For lazy.nvim local development: >lua
+    {
+      dir = "~/git/jaeger",
+      config = function()
+        require("json_tsdb_plot").setup()
+      end,
+    }
+<
+
+==============================================================================
+4. CONFIG FILE API                                *json-tsdb-plot-config-api*
+
+Create a `.tsdb_plot.lua` file alongside your JSON data: >lua
+
+    local tl = require("json_tsdb_plot.builder")
+
+    tl.title("My Timeline")
+    tl.sort("start")
+
+    tl.plot("medicalHistory")
+      :label("facility")
+      :start("admitDate")
+      :end_date("dischargeDate")
+      :tag("Admission")
+      :color("#e06c75")
+
+    tl.plot("prescriptions")
+      :label("drugName")
+      :start("fillDate")
+      :end_computed("fillDate", "daysSupply")
+      :tag("Rx")
+      :color("#98c379")
+<
+
+Plot methods (all return self for chaining):
+  :label({field})           String field name or function(entry)->string
+  :sublabel({field})        Secondary label appended in parentheses
+  :start({field})           Start date field name
+  :end_date({field})        Explicit end date field name
+  :end_computed({s},{d})    End = entry[s] + entry[d] days
+  :end_computed_expr({fn})  End = start + fn(entry) days
+  :tag({name})              Series tag (shown as [Tag] prefix)
+  :color({hex})             Hex color for bars (e.g., "#e06c75")
+  :filter({fn})             Predicate function(entry)->boolean
+
+Global methods:
+  tl.title({string})        Chart title
+  tl.sort({order})          Default sort: "start", "end", "duration", "label"
+  tl.date_format({fmt})     Date parsing format
+
+==============================================================================
+5. KEYBINDINGS                                    *json-tsdb-plot-keybindings*
+
+These keybindings are active only in the chart buffer:
+
+  q         Close the chart
+  + or =    Zoom in (increase time resolution)
+  -         Zoom out (decrease time resolution)
+  s         Cycle sort order (start↑, start↓, end↑, duration↓, label)
+  f         Filter by date range (prompts for start/end)
+  F         Filter by tag/series (picker)
+  r         Reset all filters and zoom
+  <Enter>   Show full JSON details of entry under cursor
+  ?         Show keybinding help
+
+==============================================================================
+6. DEVELOPMENT                                    *json-tsdb-plot-development*
+
+Hot Reload ~
+Run |:TsdbPlotReload| to clear module caches and pick up code changes.
+
+Running Tests ~
+>bash
+    nvim --headless -c "PlenaryBustedDirectory tests/ \
+      {minimal_init = 'tests/minimal_init.lua'}"
+<
+
+vim:tw=78:ts=8:ft=help:norl:

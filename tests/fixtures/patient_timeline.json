@@ -1,0 +1,170 @@
+{
+  "patient": {
+    "name": "Maria Garcia",
+    "dob": "1962-08-22",
+    "memberId": "MBR-2024-44821"
+  },
+  "medicalHistory": [
+    {
+      "facility": "St. Mary's Hospital",
+      "admitDate": "2024-01-15",
+      "dischargeDate": "2024-01-22",
+      "diagnosis": "Community-acquired pneumonia",
+      "type": "inpatient",
+      "drg": "193",
+      "provider": "Dr. Ramirez"
+    },
+    {
+      "facility": "QuickCare Urgent Care",
+      "admitDate": "2024-03-05",
+      "dischargeDate": "2024-03-05",
+      "diagnosis": "Urinary tract infection",
+      "type": "outpatient",
+      "drg": null,
+      "provider": "Dr. Nguyen"
+    },
+    {
+      "facility": "Memorial Regional Medical",
+      "admitDate": "2024-05-10",
+      "dischargeDate": "2024-05-18",
+      "diagnosis": "CHF exacerbation",
+      "type": "inpatient",
+      "drg": "291",
+      "provider": "Dr. Kapoor"
+    },
+    {
+      "facility": "St. Mary's Hospital",
+      "admitDate": "2024-06-28",
+      "dischargeDate": "2024-07-02",
+      "diagnosis": "COPD with acute bronchitis",
+      "type": "inpatient",
+      "drg": "190",
+      "provider": "Dr. Ramirez"
+    },
+    {
+      "facility": "St. Mary's Hospital",
+      "admitDate": "2024-08-14",
+      "dischargeDate": "2024-08-16",
+      "diagnosis": "Chest pain observation",
+      "type": "observation",
+      "drg": null,
+      "provider": "Dr. Ramirez"
+    }
+  ],
+  "pharmacyHistory": [
+    {
+      "drugName": "Amoxicillin 500mg",
+      "fillDate": "2024-01-16",
+      "daysSupply": 10,
+      "quantity": 30,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Ramirez",
+      "ndc": "65862-0527-01"
+    },
+    {
+      "drugName": "Prednisone 20mg taper",
+      "fillDate": "2024-01-17",
+      "daysSupply": 12,
+      "quantity": 42,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Ramirez",
+      "ndc": "00054-4728-25"
+    },
+    {
+      "drugName": "Ciprofloxacin 500mg",
+      "fillDate": "2024-03-05",
+      "daysSupply": 7,
+      "quantity": 14,
+      "pharmacy": "Walgreens #1087",
+      "prescriber": "Dr. Nguyen",
+      "ndc": "00093-0862-01"
+    },
+    {
+      "drugName": "Furosemide 40mg",
+      "fillDate": "2024-05-12",
+      "daysSupply": 30,
+      "quantity": 30,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Kapoor",
+      "ndc": "00054-4299-25"
+    },
+    {
+      "drugName": "Furosemide 40mg",
+      "fillDate": "2024-06-10",
+      "daysSupply": 30,
+      "quantity": 30,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Kapoor",
+      "ndc": "00054-4299-25"
+    },
+    {
+      "drugName": "Albuterol HFA inhaler",
+      "fillDate": "2024-06-29",
+      "daysSupply": 30,
+      "quantity": 1,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Ramirez",
+      "ndc": "66993-0019-68"
+    },
+    {
+      "drugName": "Azithromycin 250mg Z-Pack",
+      "fillDate": "2024-06-29",
+      "daysSupply": 5,
+      "quantity": 6,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Ramirez",
+      "ndc": "00093-7169-19"
+    },
+    {
+      "drugName": "Furosemide 40mg",
+      "fillDate": "2024-07-10",
+      "daysSupply": 30,
+      "quantity": 30,
+      "pharmacy": "CVS #4521",
+      "prescriber": "Dr. Kapoor",
+      "ndc": "00054-4299-25"
+    }
+  ],
+  "currentPrescription": [
+    {
+      "drugName": "Lisinopril 10mg",
+      "startDate": "2024-05-18",
+      "daysSupply": 90,
+      "refillsRemaining": 3,
+      "prescriber": "Dr. Kapoor",
+      "status": "active"
+    },
+    {
+      "drugName": "Metoprolol Succinate 25mg ER",
+      "startDate": "2024-05-18",
+      "daysSupply": 90,
+      "refillsRemaining": 5,
+      "prescriber": "Dr. Kapoor",
+      "status": "active"
+    },
+    {
+      "drugName": "Atorvastatin 40mg",
+      "startDate": "2024-06-01",
+      "daysSupply": 90,
+      "refillsRemaining": 2,
+      "prescriber": "Dr. Kapoor",
+      "status": "active"
+    },
+    {
+      "drugName": "Furosemide 40mg",
+      "startDate": "2024-07-10",
+      "daysSupply": 30,
+      "refillsRemaining": 11,
+      "prescriber": "Dr. Kapoor",
+      "status": "active"
+    },
+    {
+      "drugName": "Potassium Chloride 20mEq ER",
+      "startDate": "2024-05-18",
+      "daysSupply": 90,
+      "refillsRemaining": 5,
+      "prescriber": "Dr. Kapoor",
+      "status": "active"
+    }
+  ]
+}
