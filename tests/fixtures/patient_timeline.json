@@ -1,170 +1,136 @@
 {
-  "patient": {
+  "beneficiary": {
     "name": "Maria Garcia",
     "dob": "1962-08-22",
-    "memberId": "MBR-2024-44821"
+    "medicareBeneficiaryId": "1EG4-TE5-MK72",
+    "plan": "Medicare Advantage Plan Part A/B"
   },
   "medicalHistory": [
     {
+      "claimId": "CLM-INP-2024-001",
       "facility": "St. Mary's Hospital",
       "admitDate": "2024-01-15",
       "dischargeDate": "2024-01-22",
-      "diagnosis": "Community-acquired pneumonia",
-      "type": "inpatient",
+      "diagnosis": "Community-acquired pneumonia (J18.9)",
+      "type": "Inpatient Hospital",
       "drg": "193",
-      "provider": "Dr. Ramirez"
+      "coveredAmount": 14500.00,
+      "provider": "Dr. Ramirez, NPI 1497823410"
     },
     {
-      "facility": "QuickCare Urgent Care",
+      "claimId": "CLM-OUT-2024-042",
+      "facility": "Metro Ambulatory Care Center",
       "admitDate": "2024-03-05",
       "dischargeDate": "2024-03-05",
-      "diagnosis": "Urinary tract infection",
-      "type": "outpatient",
+      "diagnosis": "Diagnostic Colonoscopy (CPT 45378)",
+      "type": "Outpatient Procedure",
       "drg": null,
-      "provider": "Dr. Nguyen"
+      "coveredAmount": 1850.00,
+      "provider": "Dr. Nguyen, NPI 1823940192"
     },
     {
-      "facility": "Memorial Regional Medical",
+      "claimId": "CLM-INP-2024-089",
+      "facility": "Memorial Regional Medical Center",
       "admitDate": "2024-05-10",
       "dischargeDate": "2024-05-18",
-      "diagnosis": "CHF exacerbation",
-      "type": "inpatient",
+      "diagnosis": "Acute systolic heart failure (I50.21)",
+      "type": "Inpatient Hospital",
       "drg": "291",
-      "provider": "Dr. Kapoor"
+      "coveredAmount": 22400.00,
+      "provider": "Dr. Kapoor, NPI 1092837461"
     },
     {
+      "claimId": "CLM-INP-2024-112",
       "facility": "St. Mary's Hospital",
       "admitDate": "2024-06-28",
       "dischargeDate": "2024-07-02",
-      "diagnosis": "COPD with acute bronchitis",
-      "type": "inpatient",
+      "diagnosis": "COPD with acute exacerbation (J44.1)",
+      "type": "Inpatient Hospital",
       "drg": "190",
-      "provider": "Dr. Ramirez"
+      "coveredAmount": 9800.00,
+      "provider": "Dr. Ramirez, NPI 1497823410"
     },
     {
+      "claimId": "CLM-OBS-2024-145",
       "facility": "St. Mary's Hospital",
       "admitDate": "2024-08-14",
       "dischargeDate": "2024-08-16",
-      "diagnosis": "Chest pain observation",
-      "type": "observation",
+      "diagnosis": "Chest pain observation & telemetry (R07.9)",
+      "type": "Observation Stay",
       "drg": null,
-      "provider": "Dr. Ramirez"
+      "coveredAmount": 3400.00,
+      "provider": "Dr. Ramirez, NPI 1497823410"
     }
   ],
-  "pharmacyHistory": [
+  "priorAuthorizations": [
     {
-      "drugName": "Amoxicillin 500mg",
-      "fillDate": "2024-01-16",
-      "daysSupply": 10,
-      "quantity": 30,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Ramirez",
-      "ndc": "65862-0527-01"
+      "requestId": "PA-2024-0104",
+      "serviceType": "Cardiac Rehabilitation (CPT 93798)",
+      "requestDate": "2024-01-25",
+      "authorizedDays": 60,
+      "decision": "Approved",
+      "facility": "Cardiopulmonary Wellness Center",
+      "orderingPhysician": "Dr. Ramirez",
+      "reviewType": "Standard Prior Auth"
     },
     {
-      "drugName": "Prednisone 20mg taper",
-      "fillDate": "2024-01-17",
-      "daysSupply": 12,
-      "quantity": 42,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Ramirez",
-      "ndc": "00054-4728-25"
+      "requestId": "PA-2024-0329",
+      "serviceType": "Abdominal MRI with Contrast (CPT 74183)",
+      "requestDate": "2024-03-12",
+      "authorizedDays": 14,
+      "decision": "Approved",
+      "facility": "Advanced Diagnostic Imaging",
+      "orderingPhysician": "Dr. Nguyen",
+      "reviewType": "Expedited Prior Auth"
     },
     {
-      "drugName": "Ciprofloxacin 500mg",
-      "fillDate": "2024-03-05",
-      "daysSupply": 7,
-      "quantity": 14,
-      "pharmacy": "Walgreens #1087",
-      "prescriber": "Dr. Nguyen",
-      "ndc": "00093-0862-01"
+      "requestId": "PA-2024-0588",
+      "serviceType": "Inpatient Physical Rehab (HCPCS H2014)",
+      "requestDate": "2024-05-19",
+      "authorizedDays": 30,
+      "decision": "Approved",
+      "facility": "Highland Physical Rehabilitation",
+      "orderingPhysician": "Dr. Kapoor",
+      "reviewType": "Concurrent Review"
     },
     {
-      "drugName": "Furosemide 40mg",
-      "fillDate": "2024-05-12",
-      "daysSupply": 30,
-      "quantity": 30,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Kapoor",
-      "ndc": "00054-4299-25"
-    },
-    {
-      "drugName": "Furosemide 40mg",
-      "fillDate": "2024-06-10",
-      "daysSupply": 30,
-      "quantity": 30,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Kapoor",
-      "ndc": "00054-4299-25"
-    },
-    {
-      "drugName": "Albuterol HFA inhaler",
-      "fillDate": "2024-06-29",
-      "daysSupply": 30,
-      "quantity": 1,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Ramirez",
-      "ndc": "66993-0019-68"
-    },
-    {
-      "drugName": "Azithromycin 250mg Z-Pack",
-      "fillDate": "2024-06-29",
-      "daysSupply": 5,
-      "quantity": 6,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Ramirez",
-      "ndc": "00093-7169-19"
-    },
-    {
-      "drugName": "Furosemide 40mg",
-      "fillDate": "2024-07-10",
-      "daysSupply": 30,
-      "quantity": 30,
-      "pharmacy": "CVS #4521",
-      "prescriber": "Dr. Kapoor",
-      "ndc": "00054-4299-25"
+      "requestId": "PA-2024-0710",
+      "serviceType": "Pulmonary Diagnostic Panel (CPT 94010)",
+      "requestDate": "2024-07-08",
+      "authorizedDays": 21,
+      "decision": "Approved",
+      "facility": "Metro Pulmonary Institute",
+      "orderingPhysician": "Dr. Ramirez",
+      "reviewType": "Standard Prior Auth"
     }
   ],
-  "currentPrescription": [
+  "durableMedicalEquipment": [
     {
-      "drugName": "Lisinopril 10mg",
-      "startDate": "2024-05-18",
-      "daysSupply": 90,
-      "refillsRemaining": 3,
-      "prescriber": "Dr. Kapoor",
-      "status": "active"
+      "requestId": "DME-2024-001",
+      "itemDescription": "Portable Oxygen Concentrator (HCPCS E1390)",
+      "startDate": "2024-01-23",
+      "coverageDays": 90,
+      "prescriber": "Dr. Ramirez",
+      "supplier": "AirCare Medical Supply",
+      "status": "Active Rental"
     },
     {
-      "drugName": "Metoprolol Succinate 25mg ER",
-      "startDate": "2024-05-18",
-      "daysSupply": 90,
-      "refillsRemaining": 5,
+      "requestId": "DME-2024-002",
+      "itemDescription": "Hospital Bed with Side Rails (HCPCS E0260)",
+      "startDate": "2024-05-19",
+      "coverageDays": 60,
       "prescriber": "Dr. Kapoor",
-      "status": "active"
+      "supplier": "Metro DME Services",
+      "status": "Active Rental"
     },
     {
-      "drugName": "Atorvastatin 40mg",
-      "startDate": "2024-06-01",
-      "daysSupply": 90,
-      "refillsRemaining": 2,
-      "prescriber": "Dr. Kapoor",
-      "status": "active"
-    },
-    {
-      "drugName": "Furosemide 40mg",
-      "startDate": "2024-07-10",
-      "daysSupply": 30,
-      "refillsRemaining": 11,
-      "prescriber": "Dr. Kapoor",
-      "status": "active"
-    },
-    {
-      "drugName": "Potassium Chloride 20mEq ER",
-      "startDate": "2024-05-18",
-      "daysSupply": 90,
-      "refillsRemaining": 5,
-      "prescriber": "Dr. Kapoor",
-      "status": "active"
+      "requestId": "DME-2024-003",
+      "itemDescription": "Non-Invasive BiPAP Unit (HCPCS E0470)",
+      "startDate": "2024-07-03",
+      "coverageDays": 90,
+      "prescriber": "Dr. Ramirez",
+      "supplier": "AirCare Medical Supply",
+      "status": "Active Rental"
     }
   ]
 }

@@ -31,13 +31,13 @@ tl.plot("therapySessions")
   :tag("Therapy")
   :color("#61afef")
 
-tl.plot("prescriptions")
+tl.plot("dmeOrders")
   :label(function(e)
-    return e.drugName .. " — " .. e.reason
+    return e.equipmentType .. " — " .. e.clinicalIndication
   end)
-  :start("fillDate")
-  :end_computed("fillDate", "daysSupply")
-  :tag("Rx")
+  :start("orderDate")
+  :end_computed("orderDate", "authorizedDays")
+  :tag("DME")
   :color("#98c379")
 
 tl.sort("start")

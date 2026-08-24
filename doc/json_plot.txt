@@ -20,8 +20,8 @@ json-plot.nvim renders interactive ASCII Gantt charts from JSON data
 files. Define multiple plot series with a fluent Lua config API, each with
 its own data source, field mappings, colors, and tags.
 
-Primary use case: medical/pharmacy data analysis (admissions, prescriptions,
-care coordination timelines).
+Primary use case: CMS Medicare medical claims, prior authorization
+service requests, post-acute care coordination, and time-series data.
 
 ==============================================================================
 2. COMMANDS                                              *json-plot-commands*
@@ -64,21 +64,21 @@ Create a `.json_plot.lua` file alongside your JSON data: >lua
 
     local tl = require("json_plot.builder")
 
-    tl.title("My Timeline")
+    tl.title("Medicare Claims & Prior Auth")
     tl.sort("start")
 
     tl.plot("medicalHistory")
       :label("facility")
       :start("admitDate")
       :end_date("dischargeDate")
-      :tag("Admission")
+      :tag("Inpatient")
       :color("#e06c75")
 
-    tl.plot("prescriptions")
-      :label("drugName")
-      :start("fillDate")
-      :end_computed("fillDate", "daysSupply")
-      :tag("Rx")
+    tl.plot("priorAuthorizations")
+      :label("serviceType")
+      :start("requestDate")
+      :end_computed("requestDate", "authorizedDays")
+      :tag("Prior Auth")
       :color("#98c379")
 <
 

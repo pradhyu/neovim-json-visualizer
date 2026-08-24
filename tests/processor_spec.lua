@@ -37,16 +37,16 @@ describe("processor", function()
 
     it("processes entries with computed end dates", function()
       local data = {
-        prescriptions = {
-          { drugName = "Amoxicillin", fillDate = "2024-01-16", daysSupply = 10 },
+        priorAuthorizations = {
+          { serviceName = "Cardiac Rehab", requestDate = "2024-01-16", authorizedDays = 10 },
         },
       }
 
-      builder.plot("prescriptions")
-        :label("drugName")
-        :start("fillDate")
-        :end_computed("fillDate", "daysSupply")
-        :tag("Rx")
+      builder.plot("priorAuthorizations")
+        :label("serviceName")
+        :start("requestDate")
+        :end_computed("requestDate", "authorizedDays")
+        :tag("Prior Auth")
 
       local entries = processor.process(data, builder.get_plots(), builder.get_global())
       assert.are.equal(1, #entries)
@@ -164,17 +164,17 @@ describe("processor", function()
         admissions = {
           { facility = "Hospital", admitDate = "2024-01-15", dischargeDate = "2024-01-22" },
         },
-        prescriptions = {
-          { drug = "Med A", fillDate = "2024-01-16", daysSupply = 10 },
-          { drug = "Med B", fillDate = "2024-02-01", daysSupply = 30 },
+        priorAuthorizations = {
+          { service = "Physical Rehab", requestDate = "2024-01-16", authorizedDays = 10 },
+          { service = "Home Health", requestDate = "2024-02-01", authorizedDays = 30 },
         },
       }
 
       builder.plot("admissions")
         :label("facility"):start("admitDate"):end_date("dischargeDate"):tag("Admit")
 
-      builder.plot("prescriptions")
-        :label("drug"):start("fillDate"):end_computed("fillDate", "daysSupply"):tag("Rx")
+      builder.plot("priorAuthorizations")
+        :label("service"):start("requestDate"):end_computed("requestDate", "authorizedDays"):tag("Prior Auth")
 
       local entries = processor.process(data, builder.get_plots(), builder.get_global())
       assert.are.equal(3, #entries)

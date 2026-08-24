@@ -8,7 +8,7 @@ A Neovim plugin that reads JSON files with time-series data and renders interact
 
 - 📊 **ASCII Gantt chart** rendered with Unicode block characters and extmark colors
 - 🔧 **Fluent config API** — define multiple series from different JSON paths
-- 📅 **Computed end dates** — `end_computed("fillDate", "daysSupply")` for prescription data
+- 📅 **Computed end dates** — `end_computed("requestDate", "authorizedDays")` for medical authorization and service durations
 - 🎨 **Color-coded** bars per series/tag via hex colors
 - 🔍 **Interactive** — zoom, sort, filter by date range or tag, detail popup
 - 🔄 **Hot-reloadable** — `:JsonPlotReload` for development without restarting Neovim
@@ -63,25 +63,44 @@ Then in your `init.lua`:
 require("json_plot").setup()
 ```
 
-## Quick Start
+## Quick Start (CMS Medicare Claims & Medical Requests)
 
-### 1. Create a JSON data file
+### 1. Create a JSON data file (`data.json`)
 
 ```json
 {
+  "beneficiary": {
+    "name": "Maria Garcia",
+    "medicareBeneficiaryId": "1EG4-TE5-MK72"
+  },
   "medicalHistory": [
     {
-      "facility": "General Hospital",
+      "facility": "St. Mary's Hospital",
       "admitDate": "2024-01-15",
       "dischargeDate": "2024-01-22",
-      "diagnosis": "Pneumonia"
+      "diagnosis": "Community-acquired pneumonia (J18.9)",
+      "type": "Inpatient Hospital"
+    },
+    {
+      "facility": "Memorial Regional Medical Center",
+      "admitDate": "2024-05-10",
+      "dischargeDate": "2024-05-18",
+      "diagnosis": "Acute systolic heart failure (I50.21)",
+      "type": "Inpatient Hospital"
     }
   ],
-  "pharmacyHistory": [
+  "priorAuthorizations": [
     {
-      "drugName": "Amoxicillin 500mg",
-      "fillDate": "2024-01-16",
-      "daysSupply": 10
+      "serviceType": "Cardiac Rehabilitation (CPT 93798)",
+      "requestDate": "2024-01-25",
+      "authorizedDays": 60,
+      "decision": "Approved"
+    },
+    {
+      "serviceType": "Inpatient Physical Rehab (HCPCS H2014)",
+      "requestDate": "2024-05-19",
+      "authorizedDays": 30,
+      "decision": "Approved"
     }
   ]
 }
@@ -92,20 +111,23 @@ require("json_plot").setup()
 ```lua
 local tl = require("json_plot.builder")
 
-tl.title("Patient Timeline")
+tl.title("Medicare Claims & Prior Auth — Maria Garcia")
 
+-- Series 1: Inpatient / Outpatient Hospital Claims
 tl.plot("medicalHistory")
   :label("facility")
+  :sublabel("diagnosis")
   :start("admitDate")
   :end_date("dischargeDate")
-  :tag("Admit")
+  :tag("Claim")
   :color("#e06c75")
 
-tl.plot("pharmacyHistory")
-  :label("drugName")
-  :start("fillDate")
-  :end_computed("fillDate", "daysSupply")
-  :tag("Rx Fill")
+-- Series 2: CMS Prior Authorization & Service Requests (Da Vinci PAS)
+tl.plot("priorAuthorizations")
+  :label("serviceType")
+  :start("requestDate")
+  :end_computed("requestDate", "authorizedDays")
+  :tag("Prior Auth")
   :color("#98c379")
 
 tl.sort("start")
@@ -204,9 +226,9 @@ nvim --headless -u tests/minimal_init.lua -c "PlenaryBustedDirectory tests/"
 
 See the `examples/` directory for complete config files:
 
-- `patient_timeline.lua` — Medical admissions + pharmacy fills + active prescriptions
-- `opioid_monitor.lua` — Opioid + benzodiazepine overlap monitoring
-- `care_coordination.lua` — SNF → Home Health → Therapy continuum
+- `patient_timeline.lua` — Inpatient/Outpatient Medicare claims + Prior Authorization requests + DMEPOS equipment
+- `prior_authorization_monitor.lua` — CMS Da Vinci PAS Inpatient Pre-Certifications + Advanced Diagnostic Imaging + DME requests
+- `care_coordination.lua` — SNF → Home Health → Outpatient Therapy → DME continuum
 
 Each has a matching JSON fixture in `tests/fixtures/`.
 

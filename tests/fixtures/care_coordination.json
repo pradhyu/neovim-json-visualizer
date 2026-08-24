@@ -3,7 +3,8 @@
     "name": "Dorothy Williams",
     "memberId": "MBR-2024-55102",
     "dob": "1948-06-12",
-    "chartReviewPeriod": "2023-01-01 to 2024-09-30"
+    "chartReviewPeriod": "2023-01-01 to 2024-09-30",
+    "medicareBeneficiaryId": "2MA3-RP7-DL90"
   },
   "snfStays": [
     {
@@ -2711,706 +2712,706 @@
       "frequency": "2x/week"
     }
   ],
-  "prescriptions": [
+  "dmeOrders": [
     {
-      "rxId": "RX-001",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2023-01-10",
-      "daysSupply": 60,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-001",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-01-10",
+      "authorizedDays": 60,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-002",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2023-01-14",
-      "daysSupply": 14,
-      "reason": "Fracture prevention"
+      "orderId": "DME-002",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-01-14",
+      "authorizedDays": 14,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-003",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2023-01-23",
-      "daysSupply": 90,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-003",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-01-23",
+      "authorizedDays": 90,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-004",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-01-27",
-      "daysSupply": 90,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-004",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2023-01-27",
+      "authorizedDays": 90,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-005",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2023-02-05",
-      "daysSupply": 60,
-      "reason": "Fracture prevention"
+      "orderId": "DME-005",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2023-02-05",
+      "authorizedDays": 60,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-006",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2023-02-09",
-      "daysSupply": 14,
-      "reason": "Fracture prevention"
+      "orderId": "DME-006",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2023-02-09",
+      "authorizedDays": 14,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-007",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2023-02-17",
-      "daysSupply": 90,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-007",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2023-02-17",
+      "authorizedDays": 90,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-008",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-02-25",
-      "daysSupply": 90,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-008",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2023-02-25",
+      "authorizedDays": 90,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-009",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2023-03-01",
-      "daysSupply": 90,
-      "reason": "Anticoagulation"
+      "orderId": "DME-009",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2023-03-01",
+      "authorizedDays": 90,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-010",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2023-03-10",
-      "daysSupply": 14,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-010",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2023-03-10",
+      "authorizedDays": 14,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-011",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2023-03-19",
-      "daysSupply": 60,
-      "reason": "Pain management step-down"
+      "orderId": "DME-011",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-03-19",
+      "authorizedDays": 60,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-012",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-03-25",
-      "daysSupply": 30,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-012",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-03-25",
+      "authorizedDays": 30,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-013",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2023-03-29",
-      "daysSupply": 14,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-013",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-03-29",
+      "authorizedDays": 14,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-014",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-04-04",
-      "daysSupply": 60,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-014",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2023-04-04",
+      "authorizedDays": 60,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-015",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2023-04-09",
-      "daysSupply": 14,
-      "reason": "Anticoagulation"
+      "orderId": "DME-015",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2023-04-09",
+      "authorizedDays": 14,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-016",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2023-04-14",
-      "daysSupply": 30,
-      "reason": "Pain management step-down"
+      "orderId": "DME-016",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2023-04-14",
+      "authorizedDays": 30,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-017",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-04-19",
-      "daysSupply": 30,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-017",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2023-04-19",
+      "authorizedDays": 30,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-018",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2023-04-23",
-      "daysSupply": 90,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-018",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2023-04-23",
+      "authorizedDays": 90,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-019",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-05-03",
-      "daysSupply": 90,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-019",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2023-05-03",
+      "authorizedDays": 90,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-020",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-05-11",
-      "daysSupply": 30,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-020",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2023-05-11",
+      "authorizedDays": 30,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-021",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-05-21",
-      "daysSupply": 90,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-021",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-05-21",
+      "authorizedDays": 90,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-022",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2023-05-31",
-      "daysSupply": 60,
-      "reason": "Pain management step-down"
+      "orderId": "DME-022",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-05-31",
+      "authorizedDays": 60,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-023",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-06-03",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-023",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-06-03",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-024",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2023-06-10",
-      "daysSupply": 90,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-024",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2023-06-10",
+      "authorizedDays": 90,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-025",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2023-06-13",
-      "daysSupply": 60,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-025",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2023-06-13",
+      "authorizedDays": 60,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-026",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-06-20",
-      "daysSupply": 14,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-026",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2023-06-20",
+      "authorizedDays": 14,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-027",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2023-06-29",
-      "daysSupply": 14,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-027",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2023-06-29",
+      "authorizedDays": 14,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-028",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-07-09",
-      "daysSupply": 30,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-028",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2023-07-09",
+      "authorizedDays": 30,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-029",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-07-17",
-      "daysSupply": 90,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-029",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2023-07-17",
+      "authorizedDays": 90,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-030",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2023-07-22",
-      "daysSupply": 90,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-030",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2023-07-22",
+      "authorizedDays": 90,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-031",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-07-26",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-031",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-07-26",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-032",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2023-07-31",
-      "daysSupply": 30,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-032",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-07-31",
+      "authorizedDays": 30,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-033",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2023-08-10",
-      "daysSupply": 30,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-033",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-08-10",
+      "authorizedDays": 30,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-034",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-08-18",
-      "daysSupply": 60,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-034",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2023-08-18",
+      "authorizedDays": 60,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-035",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2023-08-27",
-      "daysSupply": 60,
-      "reason": "Fracture prevention"
+      "orderId": "DME-035",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2023-08-27",
+      "authorizedDays": 60,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-036",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-08-30",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-036",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2023-08-30",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-037",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-09-07",
-      "daysSupply": 90,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-037",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2023-09-07",
+      "authorizedDays": 90,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-038",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2023-09-14",
-      "daysSupply": 30,
-      "reason": "Pain management step-down"
+      "orderId": "DME-038",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2023-09-14",
+      "authorizedDays": 30,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-039",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-09-22",
-      "daysSupply": 30,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-039",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2023-09-22",
+      "authorizedDays": 30,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-040",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2023-09-30",
-      "daysSupply": 90,
-      "reason": "Pain management step-down"
+      "orderId": "DME-040",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2023-09-30",
+      "authorizedDays": 90,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-041",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-10-05",
-      "daysSupply": 14,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-041",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-10-05",
+      "authorizedDays": 14,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-042",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2023-10-12",
-      "daysSupply": 90,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-042",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-10-12",
+      "authorizedDays": 90,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-043",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2023-10-20",
-      "daysSupply": 14,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-043",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-10-20",
+      "authorizedDays": 14,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-044",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2023-10-29",
-      "daysSupply": 60,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-044",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2023-10-29",
+      "authorizedDays": 60,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-045",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2023-11-01",
-      "daysSupply": 60,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-045",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2023-11-01",
+      "authorizedDays": 60,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-046",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2023-11-06",
-      "daysSupply": 60,
-      "reason": "Anticoagulation"
+      "orderId": "DME-046",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2023-11-06",
+      "authorizedDays": 60,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-047",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2023-11-16",
-      "daysSupply": 30,
-      "reason": "Anticoagulation"
+      "orderId": "DME-047",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2023-11-16",
+      "authorizedDays": 30,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-048",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2023-11-21",
-      "daysSupply": 14,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-048",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2023-11-21",
+      "authorizedDays": 14,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-049",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2023-11-28",
-      "daysSupply": 14,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-049",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2023-11-28",
+      "authorizedDays": 14,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-050",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-12-06",
-      "daysSupply": 30,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-050",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2023-12-06",
+      "authorizedDays": 30,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-051",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2023-12-15",
-      "daysSupply": 30,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-051",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2023-12-15",
+      "authorizedDays": 30,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-052",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2023-12-20",
-      "daysSupply": 30,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-052",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2023-12-20",
+      "authorizedDays": 30,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-053",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2023-12-30",
-      "daysSupply": 90,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-053",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2023-12-30",
+      "authorizedDays": 90,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-054",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2024-01-07",
-      "daysSupply": 90,
-      "reason": "Anticoagulation"
+      "orderId": "DME-054",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2024-01-07",
+      "authorizedDays": 90,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-055",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-01-14",
-      "daysSupply": 30,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-055",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2024-01-14",
+      "authorizedDays": 30,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-056",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-01-20",
-      "daysSupply": 90,
-      "reason": "Pain management step-down"
+      "orderId": "DME-056",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2024-01-20",
+      "authorizedDays": 90,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-057",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-01-26",
-      "daysSupply": 90,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-057",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2024-01-26",
+      "authorizedDays": 90,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-058",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-02-05",
-      "daysSupply": 90,
-      "reason": "Pain management step-down"
+      "orderId": "DME-058",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2024-02-05",
+      "authorizedDays": 90,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-059",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2024-02-14",
-      "daysSupply": 30,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-059",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2024-02-14",
+      "authorizedDays": 30,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-060",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-02-19",
-      "daysSupply": 14,
-      "reason": "Pain management step-down"
+      "orderId": "DME-060",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2024-02-19",
+      "authorizedDays": 14,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-061",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-02-29",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-061",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2024-02-29",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-062",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-03-04",
-      "daysSupply": 14,
-      "reason": "Pain management step-down"
+      "orderId": "DME-062",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2024-03-04",
+      "authorizedDays": 14,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-063",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-03-09",
-      "daysSupply": 90,
-      "reason": "Pain management step-down"
+      "orderId": "DME-063",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2024-03-09",
+      "authorizedDays": 90,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-064",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2024-03-14",
-      "daysSupply": 14,
-      "reason": "Fracture prevention"
+      "orderId": "DME-064",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2024-03-14",
+      "authorizedDays": 14,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-065",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-03-20",
-      "daysSupply": 60,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-065",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2024-03-20",
+      "authorizedDays": 60,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-066",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2024-03-23",
-      "daysSupply": 14,
-      "reason": "Fracture prevention"
+      "orderId": "DME-066",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2024-03-23",
+      "authorizedDays": 14,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-067",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2024-04-01",
-      "daysSupply": 60,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-067",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2024-04-01",
+      "authorizedDays": 60,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-068",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2024-04-07",
-      "daysSupply": 14,
-      "reason": "Fracture prevention"
+      "orderId": "DME-068",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2024-04-07",
+      "authorizedDays": 14,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-069",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2024-04-15",
-      "daysSupply": 14,
-      "reason": "Anticoagulation"
+      "orderId": "DME-069",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2024-04-15",
+      "authorizedDays": 14,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-070",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2024-04-23",
-      "daysSupply": 60,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-070",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2024-04-23",
+      "authorizedDays": 60,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-071",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2024-04-28",
-      "daysSupply": 14,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-071",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2024-04-28",
+      "authorizedDays": 14,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-072",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-05-05",
-      "daysSupply": 30,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-072",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2024-05-05",
+      "authorizedDays": 30,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-073",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-05-15",
-      "daysSupply": 14,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-073",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2024-05-15",
+      "authorizedDays": 14,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-074",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2024-05-19",
-      "daysSupply": 60,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-074",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2024-05-19",
+      "authorizedDays": 60,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-075",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2024-05-25",
-      "daysSupply": 90,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-075",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2024-05-25",
+      "authorizedDays": 90,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-076",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-05-29",
-      "daysSupply": 30,
-      "reason": "Pain management step-down"
+      "orderId": "DME-076",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2024-05-29",
+      "authorizedDays": 30,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-077",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2024-06-05",
-      "daysSupply": 14,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-077",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2024-06-05",
+      "authorizedDays": 14,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-078",
-      "drugName": "Calcium + Vitamin D",
-      "fillDate": "2024-06-11",
-      "daysSupply": 90,
-      "reason": "Fracture prevention"
+      "orderId": "DME-078",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2024-06-11",
+      "authorizedDays": 90,
+      "clinicalIndication": "Fracture prevention"
     },
     {
-      "rxId": "RX-079",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2024-06-15",
-      "daysSupply": 90,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-079",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2024-06-15",
+      "authorizedDays": 90,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-080",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2024-06-18",
-      "daysSupply": 30,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-080",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2024-06-18",
+      "authorizedDays": 30,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-081",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-06-23",
-      "daysSupply": 90,
-      "reason": "Pain management step-down"
+      "orderId": "DME-081",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2024-06-23",
+      "authorizedDays": 90,
+      "clinicalIndication": "Pain management step-down"
     },
     {
-      "rxId": "RX-082",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2024-06-26",
-      "daysSupply": 60,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-082",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2024-06-26",
+      "authorizedDays": 60,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-083",
-      "drugName": "Lorazepam 1mg",
-      "fillDate": "2024-07-02",
-      "daysSupply": 90,
-      "reason": "Anxiety / Muscle spasm"
+      "orderId": "DME-083",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2024-07-02",
+      "authorizedDays": 90,
+      "clinicalIndication": "Anxiety / Muscle spasm"
     },
     {
-      "rxId": "RX-084",
-      "drugName": "Hydrocodone-APAP 5-325",
-      "fillDate": "2024-07-07",
-      "daysSupply": 60,
-      "reason": "Breakthrough pain (Opioid)"
+      "orderId": "DME-084",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2024-07-07",
+      "authorizedDays": 60,
+      "clinicalIndication": "Breakthrough pain"
     },
     {
-      "rxId": "RX-085",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2024-07-11",
-      "daysSupply": 14,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-085",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2024-07-11",
+      "authorizedDays": 14,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-086",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-07-20",
-      "daysSupply": 14,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-086",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2024-07-20",
+      "authorizedDays": 14,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-087",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-07-29",
-      "daysSupply": 60,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-087",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2024-07-29",
+      "authorizedDays": 60,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-088",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-08-01",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-088",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2024-08-01",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-089",
-      "drugName": "Apixaban 5mg",
-      "fillDate": "2024-08-09",
-      "daysSupply": 14,
-      "reason": "Anticoagulation"
+      "orderId": "DME-089",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2024-08-09",
+      "authorizedDays": 14,
+      "clinicalIndication": "Anticoagulation"
     },
     {
-      "rxId": "RX-090",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2024-08-17",
-      "daysSupply": 14,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-090",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2024-08-17",
+      "authorizedDays": 14,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-091",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2024-08-25",
-      "daysSupply": 60,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-091",
+      "equipmentType": "Wheelchair standard (K0001)",
+      "orderDate": "2024-08-25",
+      "authorizedDays": 60,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-092",
-      "drugName": "Metoprolol 25mg",
-      "fillDate": "2024-08-30",
-      "daysSupply": 90,
-      "reason": "Hypertension post-op"
+      "orderId": "DME-092",
+      "equipmentType": "Oxygen concentrator (E1390)",
+      "orderDate": "2024-08-30",
+      "authorizedDays": 90,
+      "clinicalIndication": "Hypertension post-op"
     },
     {
-      "rxId": "RX-093",
-      "drugName": "Enoxaparin 40mg inj",
-      "fillDate": "2024-09-04",
-      "daysSupply": 14,
-      "reason": "DVT prophylaxis"
+      "orderId": "DME-093",
+      "equipmentType": "Semi-electric hospital bed (E0260)",
+      "orderDate": "2024-09-04",
+      "authorizedDays": 14,
+      "clinicalIndication": "DVT prophylaxis"
     },
     {
-      "rxId": "RX-094",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2024-09-14",
-      "daysSupply": 60,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-094",
+      "equipmentType": "Folding walker with wheels (E0143)",
+      "orderDate": "2024-09-14",
+      "authorizedDays": 60,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-095",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2024-09-20",
-      "daysSupply": 30,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-095",
+      "equipmentType": "Alternating pressure mattress (E0277)",
+      "orderDate": "2024-09-20",
+      "authorizedDays": 30,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-096",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-09-23",
-      "daysSupply": 60,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-096",
+      "equipmentType": "Patient mechanical lift (E0630)",
+      "orderDate": "2024-09-23",
+      "authorizedDays": 60,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-097",
-      "drugName": "Gabapentin 300mg",
-      "fillDate": "2024-10-02",
-      "daysSupply": 90,
-      "reason": "Neuropathic pain"
+      "orderId": "DME-097",
+      "equipmentType": "Suction pump portable (E0600)",
+      "orderDate": "2024-10-02",
+      "authorizedDays": 90,
+      "clinicalIndication": "Neuropathic pain"
     },
     {
-      "rxId": "RX-098",
-      "drugName": "Oxycodone 5mg",
-      "fillDate": "2024-10-09",
-      "daysSupply": 30,
-      "reason": "Post-op pain (Opioid)"
+      "orderId": "DME-098",
+      "equipmentType": "Nebulizer with compressor (E0570)",
+      "orderDate": "2024-10-09",
+      "authorizedDays": 30,
+      "clinicalIndication": "Post-op pain"
     },
     {
-      "rxId": "RX-099",
-      "drugName": "Alendronate 70mg weekly",
-      "fillDate": "2024-10-16",
-      "daysSupply": 14,
-      "reason": "Osteoporosis treatment"
+      "orderId": "DME-099",
+      "equipmentType": "Commode chair standard (E0163)",
+      "orderDate": "2024-10-16",
+      "authorizedDays": 14,
+      "clinicalIndication": "Osteoporosis treatment"
     },
     {
-      "rxId": "RX-100",
-      "drugName": "Acetaminophen 500mg",
-      "fillDate": "2024-10-24",
-      "daysSupply": 14,
-      "reason": "Pain management step-down"
+      "orderId": "DME-100",
+      "equipmentType": "Continuous passive motion CPM (E0935)",
+      "orderDate": "2024-10-24",
+      "authorizedDays": 14,
+      "clinicalIndication": "Pain management step-down"
     }
   ]
 }

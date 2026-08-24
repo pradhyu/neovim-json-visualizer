@@ -1,0 +1,128 @@
+{
+  "beneficiary": {
+    "name": "Robert Chen",
+    "medicareBeneficiaryId": "3AK9-WL4-TR81",
+    "dob": "1954-11-03",
+    "coverage": "Medicare Part B + Supplemental Gap"
+  },
+  "inpatientPrecertifications": [
+    {
+      "requestId": "PAS-2024-101",
+      "procedure": "Total Knee Arthroplasty (CPT 27447)",
+      "facility": "Memorial Joint Replacement Center",
+      "requestDate": "2024-02-01",
+      "authorizedDays": 7,
+      "decision": "Approved",
+      "orderingProvider": "Dr. Walsh, Orthopedic Surgery",
+      "reviewStatus": "Pre-Service Authorization"
+    },
+    {
+      "requestId": "PAS-2024-142",
+      "procedure": "Post-Op Inpatient Rehabilitation Step-Down",
+      "facility": "Pine Valley Inpatient Rehab",
+      "requestDate": "2024-02-08",
+      "authorizedDays": 14,
+      "decision": "Approved",
+      "orderingProvider": "Dr. Walsh, Orthopedic Surgery",
+      "reviewStatus": "Concurrent Inpatient Review"
+    },
+    {
+      "requestId": "PAS-2024-219",
+      "procedure": "Lumbar Spinal Decompression L4-L5 (CPT 63047)",
+      "facility": "Metro Neurosurgical Pavilion",
+      "requestDate": "2024-03-01",
+      "authorizedDays": 30,
+      "decision": "Approved",
+      "orderingProvider": "Dr. Park, Neurosurgeon",
+      "reviewStatus": "Pre-Service Authorization"
+    },
+    {
+      "requestId": "PAS-2024-288",
+      "procedure": "Spinal Fusion Instrumentation (CPT 22612)",
+      "facility": "Metro Neurosurgical Pavilion",
+      "requestDate": "2024-03-28",
+      "authorizedDays": 30,
+      "decision": "Approved",
+      "orderingProvider": "Dr. Park, Neurosurgeon",
+      "reviewStatus": "Standard Prior Auth"
+    },
+    {
+      "requestId": "PAS-2024-350",
+      "procedure": "Post-Acute Inpatient Neuro Rehab Continuum",
+      "facility": "Highland Care Center",
+      "requestDate": "2024-04-25",
+      "authorizedDays": 30,
+      "decision": "Approved",
+      "orderingProvider": "Dr. Park, Neurosurgeon",
+      "reviewStatus": "Concurrent Review"
+    },
+    {
+      "requestId": "PAS-2024-412",
+      "procedure": "Spinal Cord Stimulator Trial (CPT 63650)",
+      "facility": "Regional Pain Management Center",
+      "requestDate": "2024-05-25",
+      "authorizedDays": 30,
+      "decision": "Pended Medical Review",
+      "orderingProvider": "Dr. Park, Neurosurgeon",
+      "reviewStatus": "Coverage Discovery (CRD)"
+    }
+  ],
+  "advancedImagingRequests": [
+    {
+      "requestId": "IMG-2024-051",
+      "serviceName": "Brain MRI with/without Contrast (CPT 70553)",
+      "orderingProvider": "Dr. Liu, Neurology",
+      "requestDate": "2024-01-15",
+      "authorizedDays": 30,
+      "facility": "University Diagnostic Imaging",
+      "decision": "Approved"
+    },
+    {
+      "requestId": "IMG-2024-089",
+      "serviceName": "Lumbar Spine MRI without Contrast (CPT 72148)",
+      "orderingProvider": "Dr. Liu, Neurology",
+      "requestDate": "2024-02-14",
+      "authorizedDays": 30,
+      "facility": "University Diagnostic Imaging",
+      "decision": "Approved"
+    },
+    {
+      "requestId": "IMG-2024-133",
+      "serviceName": "CT Angiography Chest/Abdomen (CPT 71275)",
+      "orderingProvider": "Dr. Liu, Neurology",
+      "requestDate": "2024-03-15",
+      "authorizedDays": 30,
+      "facility": "University Diagnostic Imaging",
+      "decision": "Approved"
+    },
+    {
+      "requestId": "IMG-2024-180",
+      "serviceName": "Cervical Spine MRI (CPT 72141)",
+      "orderingProvider": "Dr. Liu, Neurology",
+      "requestDate": "2024-04-14",
+      "authorizedDays": 30,
+      "facility": "University Diagnostic Imaging",
+      "decision": "Approved"
+    },
+    {
+      "requestId": "IMG-2024-220",
+      "serviceName": "Brain MRA Head/Neck (CPT 70544)",
+      "orderingProvider": "Dr. Liu, Neurology",
+      "requestDate": "2024-05-14",
+      "authorizedDays": 30,
+      "facility": "University Diagnostic Imaging",
+      "decision": "Approved"
+    }
+  ],
+  "dmeSuppliesRequests": [
+    {
+      "requestId": "DME-2024-88",
+      "serviceName": "Custom Knee Orthosis / Post-Op Brace (HCPCS L1845)",
+      "requestDate": "2024-04-25",
+      "authorizedDays": 180,
+      "orderingProvider": "Dr. Park",
+      "supplier": "Metro Orthotics & Prosthetics",
+      "decision": "Approved"
+    }
+  ]
+}

@@ -44,12 +44,12 @@ describe("builder", function()
     end)
 
     it("supports end_computed", function()
-      local p = builder.plot("rx")
-        :start("fillDate")
-        :end_computed("fillDate", "daysSupply")
+      local p = builder.plot("serviceRequests")
+        :start("requestDate")
+        :end_computed("requestDate", "authorizedDays")
 
-      assert.are.equal("fillDate", p._end_computed_start)
-      assert.are.equal("daysSupply", p._end_computed_duration)
+      assert.are.equal("requestDate", p._end_computed_start)
+      assert.are.equal("authorizedDays", p._end_computed_duration)
     end)
 
     it("supports end_computed_expr with function", function()
