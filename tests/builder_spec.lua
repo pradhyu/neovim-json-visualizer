@@ -1,13 +1,13 @@
 -- tests/builder_spec.lua
--- Tests for json_tsdb_plot.builder module
+-- Tests for json_plot.builder module
 
 describe("builder", function()
   local builder
 
   before_each(function()
     -- Hot-reload builder for clean state
-    package.loaded["json_tsdb_plot.builder"] = nil
-    builder = require("json_tsdb_plot.builder")
+    package.loaded["json_plot.builder"] = nil
+    builder = require("json_plot.builder")
     builder.reset()
   end)
 

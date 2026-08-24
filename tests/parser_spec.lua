@@ -1,8 +1,8 @@
 -- tests/parser_spec.lua
--- Tests for json_tsdb_plot.parser module
+-- Tests for json_plot.parser module
 
 describe("parser", function()
-  local parser = require("json_tsdb_plot.parser")
+  local parser = require("json_plot.parser")
 
   describe("parse_date", function()
     it("parses ISO 8601 date (YYYY-MM-DD)", function()

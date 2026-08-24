@@ -1,10 +1,10 @@
--- lua/json_tsdb_plot/processor.lua
+-- lua/json_plot/processor.lua
 -- Bridges parsed JSON + PlotDef objects into renderable entries.
 -- Reads PlotDef fields as set by builder.lua and converts JSON data
 -- into a flat array of { label, start_ts, end_ts, tag, color, raw } entries.
 
-local parser = require("json_tsdb_plot.parser")
-local config_mod = require("json_tsdb_plot.config")
+local parser = require("json_plot.parser")
+local config_mod = require("json_plot.config")
 
 local M = {}
 
@@ -87,7 +87,7 @@ function M.process(json_data, plots, global)
 
     if type(items) ~= "table" or not vim.islist(items) then
       vim.notify(
-        "json-tsdb-plot: Source '" .. source .. "' not found or not an array",
+        "json-plot: Source '" .. source .. "' not found or not an array",
         vim.log.levels.WARN
       )
       goto continue

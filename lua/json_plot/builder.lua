@@ -1,4 +1,4 @@
---- Fluent API builder with PlotDef class for json-tsdb-plot
+--- Fluent API builder with PlotDef class for json-plot.nvim
 local M = {}
 
 M._plots = {}

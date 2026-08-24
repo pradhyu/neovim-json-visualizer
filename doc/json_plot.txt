@@ -1,22 +1,22 @@
-*json_tsdb_plot.txt*  JSON Time Series Data Plot for Neovim
+*json_plot.txt*  JSON Time Series Data Plot for Neovim
 
-Author: json-tsdb-plot.nvim
+Author: json-plot.nvim
 License: MIT
 
 ==============================================================================
-CONTENTS                                              *json-tsdb-plot-contents*
+CONTENTS                                                  *json-plot-contents*
 
-1. Introduction ........................ |json-tsdb-plot-introduction|
-2. Commands ............................ |json-tsdb-plot-commands|
-3. Configuration ....................... |json-tsdb-plot-configuration|
-4. Config File API ..................... |json-tsdb-plot-config-api|
-5. Keybindings ......................... |json-tsdb-plot-keybindings|
-6. Development ......................... |json-tsdb-plot-development|
+1. Introduction ........................ |json-plot-introduction|
+2. Commands ............................ |json-plot-commands|
+3. Configuration ....................... |json-plot-configuration|
+4. Config File API ..................... |json-plot-config-api|
+5. Keybindings ......................... |json-plot-keybindings|
+6. Development ......................... |json-plot-development|
 
 ==============================================================================
-1. INTRODUCTION                                  *json-tsdb-plot-introduction*
+1. INTRODUCTION                                      *json-plot-introduction*
 
-json-tsdb-plot.nvim renders interactive ASCII Gantt charts from JSON data
+json-plot.nvim renders interactive ASCII Gantt charts from JSON data
 files. Define multiple plot series with a fluent Lua config API, each with
 its own data source, field mappings, colors, and tags.
 
@@ -24,44 +24,45 @@ Primary use case: medical/pharmacy data analysis (admissions, prescriptions,
 care coordination timelines).
 
 ==============================================================================
-2. COMMANDS                                          *json-tsdb-plot-commands*
+2. COMMANDS                                              *json-plot-commands*
 
-                                                                    *:TsdbPlot*
-:TsdbPlot {data.json} [{config.lua}]
+                                                                    *:JsonPlot*
+:JsonPlot {data.json} [{config.lua}]
     Open a timeline chart from a JSON data file. If {config.lua} is not
-    provided, looks for `.tsdb_plot.lua` in the same directory as the data
-    file, or falls back to interactive field selection via |vim.ui.select|.
+    provided, looks for `.json_plot.lua` or `.tsdb_plot.lua` in the same
+    directory as the data file, or falls back to interactive field selection
+    via |vim.ui.select|.
 
-                                                              *:TsdbPlotReload*
-:TsdbPlotReload
+                                                              *:JsonPlotReload*
+:JsonPlotReload
     Hot-reload all plugin modules. Clears Lua module caches and re-requires
-    all json_tsdb_plot modules. Use during development to pick up code
+    all json_plot modules. Use during development to pick up code
     changes without restarting Neovim.
 
 ==============================================================================
-3. CONFIGURATION                                *json-tsdb-plot-configuration*
+3. CONFIGURATION                                    *json-plot-configuration*
 
 Call `setup()` in your init.lua: >lua
-    require("json_tsdb_plot").setup({
+    require("json_plot").setup({
       -- optional overrides
     })
 <
 
 For lazy.nvim local development: >lua
     {
-      dir = "~/git/jaeger",
+      dir = "~/git/neovim-json-visualizer",
       config = function()
-        require("json_tsdb_plot").setup()
+        require("json_plot").setup()
       end,
     }
 <
 
 ==============================================================================
-4. CONFIG FILE API                                *json-tsdb-plot-config-api*
+4. CONFIG FILE API                                    *json-plot-config-api*
 
-Create a `.tsdb_plot.lua` file alongside your JSON data: >lua
+Create a `.json_plot.lua` file alongside your JSON data: >lua
 
-    local tl = require("json_tsdb_plot.builder")
+    local tl = require("json_plot.builder")
 
     tl.title("My Timeline")
     tl.sort("start")
@@ -98,7 +99,7 @@ Global methods:
   tl.date_format({fmt})     Date parsing format
 
 ==============================================================================
-5. KEYBINDINGS                                    *json-tsdb-plot-keybindings*
+5. KEYBINDINGS                                        *json-plot-keybindings*
 
 These keybindings are active only in the chart buffer:
 
@@ -113,15 +114,14 @@ These keybindings are active only in the chart buffer:
   ?         Show keybinding help
 
 ==============================================================================
-6. DEVELOPMENT                                    *json-tsdb-plot-development*
+6. DEVELOPMENT                                        *json-plot-development*
 
 Hot Reload ~
-Run |:TsdbPlotReload| to clear module caches and pick up code changes.
+Run |:JsonPlotReload| to clear module caches and pick up code changes.
 
 Running Tests ~
 >bash
-    nvim --headless -c "PlenaryBustedDirectory tests/ \
-      {minimal_init = 'tests/minimal_init.lua'}"
+    nvim --headless -u tests/minimal_init.lua -c "PlenaryBustedDirectory tests/"
 <
 
 vim:tw=78:ts=8:ft=help:norl:

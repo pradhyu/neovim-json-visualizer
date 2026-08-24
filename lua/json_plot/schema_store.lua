@@ -1,10 +1,10 @@
--- lua/json_tsdb_plot/schema_store.lua
+-- lua/json_plot/schema_store.lua
 -- Persists and manages saved schema configurations for JSON files / structures.
 
 local M = {}
 
 local function get_store_path()
-  local data_dir = vim.fn.stdpath("data") .. "/json_tsdb_plot"
+  local data_dir = vim.fn.stdpath("data") .. "/json_plot"
   vim.fn.mkdir(data_dir, "p")
   return data_dir .. "/saved_schemas.json"
 end

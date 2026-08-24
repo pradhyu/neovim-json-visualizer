@@ -1,4 +1,4 @@
---- Utility functions for json-tsdb-plot
+--- Utility functions for json-plot.nvim
 local M = {}
 
 --- Parse date string to timestamp

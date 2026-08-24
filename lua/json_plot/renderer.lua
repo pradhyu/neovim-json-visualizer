@@ -1,12 +1,12 @@
--- lua/json_tsdb_plot/renderer.lua
--- ASCII Gantt chart renderer for json-tsdb-plot.
+-- lua/json_plot/renderer.lua
+-- ASCII Gantt chart renderer for json-plot.
 -- Renders entries as colored horizontal bars in a scratch buffer.
 -- Supports gap collapsing, zoom, sort, filter, and detail view via buffer-local keymaps.
 
 local M = {}
 
 -- Namespace for extmark highlights
-local ns = vim.api.nvim_create_namespace("tsdb_plot_bars")
+local ns = vim.api.nvim_create_namespace("json_plot_bars")
 
 -- Module-level state storage keyed by buffer handle.
 M._buffer_states = {}
@@ -254,7 +254,7 @@ function M._open_buffer(buf, open_in)
     vim.api.nvim_win_set_buf(0, buf)
   end
   local win = vim.api.nvim_get_current_win()
-  vim.api.nvim_set_option_value("winhighlight", "Normal:TsdbPlotCanvas,NormalNC:TsdbPlotCanvas,EndOfBuffer:TsdbPlotCanvas", { win = win })
+  vim.api.nvim_set_option_value("winhighlight", "Normal:JsonPlotCanvas,NormalNC:JsonPlotCanvas,EndOfBuffer:JsonPlotCanvas", { win = win })
 end
 
 --------------------------------------------------------------------------------
@@ -317,7 +317,7 @@ end
 --------------------------------------------------------------------------------
 function M._show_help(buf)
   local lines = {
-    "╭─ json-tsdb-plot Keybindings ─╮",
+    "╭─ json-plot Keybindings ──────╮",
     "│                              │",
     "│  q      Close chart          │",
     "│  + =    Zoom in              │",
@@ -391,7 +391,7 @@ function M._export_markdown(buf)
   if not state then return end
 
   local orig_path = state.source_file
-  local default_md_name = "tsdb_plot.md"
+  local default_md_name = "json_plot.md"
   if orig_path and orig_path ~= "" then
     default_md_name = orig_path:gsub("%.json$", "") .. ".md"
   end
@@ -400,9 +400,9 @@ function M._export_markdown(buf)
     if not out_path or out_path == "" then return end
     local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
     local md_content = {
-      "# TSDB Timeline Visualization",
+      "# JSON Timeline Visualization",
       "",
-      "Source: `" .. (orig_path or "json-tsdb-plot") .. "`",
+      "Source: `" .. (orig_path or "json-plot") .. "`",
       "Generated on: `" .. os.date("%Y-%m-%d %H:%M:%S") .. "`",
       "",
       "```text",
@@ -487,7 +487,7 @@ function M._prompt_date_filter(buf)
     vim.ui.input({ prompt = "Filter end date (YYYY-MM-DD): " }, function(end_str)
       if not end_str or end_str == "" then return end
 
-      local p = require("json_tsdb_plot.parser")
+      local p = require("json_plot.parser")
       local start_ts = p.parse_date(start_str)
       local end_ts = p.parse_date(end_str)
 
@@ -498,7 +498,7 @@ function M._prompt_date_filter(buf)
         state.filters.end_ts = end_ts
         M._do_render(buf, state)
       else
-        vim.notify("json-tsdb-plot: Invalid date format", vim.log.levels.ERROR)
+        vim.notify("json-plot: Invalid date format", vim.log.levels.ERROR)
       end
     end)
   end)
@@ -551,25 +551,25 @@ end
 local hl_cache = {}
 
 local function setup_canvas_theme(cfg)
-  local theme = (cfg and cfg.theme) or require("json_tsdb_plot.config").get().theme or {}
+  local theme = (cfg and cfg.theme) or require("json_plot.config").get().theme or {}
   local canvas_bg = theme.canvas_bg or "#181825"
   local canvas_fg = theme.canvas_fg or "#cdd6f4"
   local header_fg = theme.header_fg or "#89b4fa"
   local separator_fg = theme.separator_fg or "#45475a"
   local guide_fg = theme.guide_fg or "#fab387"
 
-  vim.api.nvim_set_hl(0, "TsdbPlotCanvas", { bg = canvas_bg, fg = canvas_fg })
-  vim.api.nvim_set_hl(0, "TsdbPlotHeader", { bg = canvas_bg, fg = header_fg, bold = true })
-  vim.api.nvim_set_hl(0, "TsdbPlotSeparator", { bg = canvas_bg, fg = separator_fg })
-  vim.api.nvim_set_hl(0, "TsdbPlotSwimlane", { bg = canvas_bg, fg = "#f5c2e7", bold = true })
-  vim.api.nvim_set_hl(0, "TsdbPlotGuide", { bg = canvas_bg, fg = guide_fg, bold = true })
-  vim.api.nvim_set_hl(0, "TsdbPlotConflict", { bg = canvas_bg, fg = "#f38ba8", bold = true })
-  vim.api.nvim_set_hl(0, "TsdbPlotStatus", { bg = canvas_bg, fg = "#a6adc8", italic = true })
+  vim.api.nvim_set_hl(0, "JsonPlotCanvas", { bg = canvas_bg, fg = canvas_fg })
+  vim.api.nvim_set_hl(0, "JsonPlotHeader", { bg = canvas_bg, fg = header_fg, bold = true })
+  vim.api.nvim_set_hl(0, "JsonPlotSeparator", { bg = canvas_bg, fg = separator_fg })
+  vim.api.nvim_set_hl(0, "JsonPlotSwimlane", { bg = canvas_bg, fg = "#f5c2e7", bold = true })
+  vim.api.nvim_set_hl(0, "JsonPlotGuide", { bg = canvas_bg, fg = guide_fg, bold = true })
+  vim.api.nvim_set_hl(0, "JsonPlotConflict", { bg = canvas_bg, fg = "#f38ba8", bold = true })
+  vim.api.nvim_set_hl(0, "JsonPlotStatus", { bg = canvas_bg, fg = "#a6adc8", italic = true })
 end
 
 local function get_or_create_hl(hex)
-  if not hex then return "TsdbPlotCanvas" end
-  local hl_name = "TsdbPlot_" .. hex:gsub("#", "")
+  if not hex then return "JsonPlotCanvas" end
+  local hl_name = "JsonPlot_" .. hex:gsub("#", "")
   if not hl_cache[hl_name] then
     -- Background colored block with contrasting text, plus standalone fg
     vim.api.nvim_set_hl(0, hl_name, { bg = hex, fg = "#11111b", bold = true })
@@ -589,7 +589,7 @@ function M._do_render(buf, state)
   -- Set buffer/window local highlights for full custom background coverage
   local wins = vim.fn.win_findbuf(buf)
   for _, w in ipairs(wins) do
-    vim.api.nvim_set_option_value("winhighlight", "Normal:TsdbPlotCanvas,NormalNC:TsdbPlotCanvas,EndOfBuffer:TsdbPlotCanvas", { win = w })
+    vim.api.nvim_set_option_value("winhighlight", "Normal:JsonPlotCanvas,NormalNC:JsonPlotCanvas,EndOfBuffer:JsonPlotCanvas", { win = w })
   end
 
   -- Filter entries
@@ -826,7 +826,7 @@ function M._do_render(buf, state)
         line = sw_line_idx,
         col_start = 0,
         col_end = #swimlane_line,
-        hl_group = "TsdbPlotSwimlane",
+        hl_group = "JsonPlotSwimlane",
       })
     end
 
@@ -861,13 +861,13 @@ function M._do_render(buf, state)
           line = cur_l_idx,
           col_start = pad_l,
           col_end = pad_l + #track_label,
-          hl_group = "TsdbPlotStatus",
+          hl_group = "JsonPlotStatus",
         })
         table.insert(extmarks, {
           line = cur_l_idx,
           col_start = label_width,
           col_end = label_width + #separator,
-          hl_group = "TsdbPlotSeparator",
+          hl_group = "JsonPlotSeparator",
         })
 
         -- Highlight each individual pill bar in this track
@@ -949,7 +949,7 @@ function M._do_render(buf, state)
           line = current_line_idx,
           col_start = label_width,
           col_end = label_width + #separator,
-          hl_group = "TsdbPlotSeparator",
+          hl_group = "JsonPlotSeparator",
         })
         table.insert(extmarks, {
           line = current_line_idx,
@@ -974,7 +974,7 @@ function M._do_render(buf, state)
       line = ov_hdr_idx,
       col_start = 0,
       col_end = #ov_line,
-      hl_group = "TsdbPlotConflict",
+      hl_group = "JsonPlotConflict",
     })
 
     for _, ov in ipairs(overlaps) do
@@ -998,7 +998,7 @@ function M._do_render(buf, state)
         line = ov_line_idx,
         col_start = #row_prefix,
         col_end = #row_prefix + #dotted_bar + #ov_lbl + 1,
-        hl_group = "TsdbPlotConflict",
+        hl_group = "JsonPlotConflict",
       })
     end
     table.insert(lines, sep_line)
@@ -1046,7 +1046,7 @@ function M._do_render(buf, state)
       line = st_idx,
       col_start = 0,
       col_end = #st_text,
-      hl_group = "TsdbPlotStatus",
+      hl_group = "JsonPlotStatus",
     })
   end
 
@@ -1074,7 +1074,7 @@ end
 --------------------------------------------------------------------------------
 function M.render(entries, global_config)
   if not entries or #entries == 0 then
-    vim.notify("json-tsdb-plot: No entries to render", vim.log.levels.WARN)
+    vim.notify("json-plot: No entries to render", vim.log.levels.WARN)
     return
   end
 
@@ -1083,7 +1083,7 @@ function M.render(entries, global_config)
   vim.bo[buf].bufhidden = "wipe"
   vim.bo[buf].swapfile = false
   M._buf_counter = (M._buf_counter or 0) + 1
-  pcall(vim.api.nvim_buf_set_name, buf, "tsdb-plot://" .. M._buf_counter .. "_" .. os.time())
+  pcall(vim.api.nvim_buf_set_name, buf, "json-plot://" .. M._buf_counter .. "_" .. os.time())
 
   local cfg = global_config or {}
   local state = {

@@ -1,4 +1,4 @@
---- Highlight group management for json-tsdb-plot
+--- Highlight group management for json-plot.nvim
 local M = {}
 
 local hl_cache = {}
@@ -21,7 +21,7 @@ function M.ensure_hl_group(hex)
     hex = "#" .. hex
   end
   
-  local name = "TsdbPlot_" .. hex:sub(2):upper()
+  local name = "JsonPlot_" .. hex:sub(2):upper()
   
   if hl_cache[name] then
     return name

@@ -1,4 +1,4 @@
-local tl = require("json_tsdb_plot.builder")
+local tl = require("json_plot.builder")
 
 tl.title("⚠ Opioid Monitoring — Robert Chen (MBR-2024-98321)")
 

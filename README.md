@@ -1,4 +1,4 @@
-# json-tsdb-plot.nvim
+# json-plot.nvim
 
 A Neovim plugin that reads JSON files with time-series data and renders interactive ASCII Gantt charts in a buffer. Define multiple plot series with a fluent Lua API config file — each with its own data source, field mappings, colors, and tags.
 
@@ -11,7 +11,7 @@ A Neovim plugin that reads JSON files with time-series data and renders interact
 - 📅 **Computed end dates** — `end_computed("fillDate", "daysSupply")` for prescription data
 - 🎨 **Color-coded** bars per series/tag via hex colors
 - 🔍 **Interactive** — zoom, sort, filter by date range or tag, detail popup
-- 🔄 **Hot-reloadable** — `:TsdbPlotReload` for development without restarting Neovim
+- 🔄 **Hot-reloadable** — `:JsonPlotReload` for development without restarting Neovim
 - 📋 **Interactive fallback** — works without a config file via `vim.ui.select` prompts
 
 ## Installation
@@ -20,20 +20,20 @@ A Neovim plugin that reads JSON files with time-series data and renders interact
 
 ```lua
 {
-  -- For development (local path):
-  dir = "~/git/jaeger",
+  "pradhyu/neovim-json-visualizer",
   config = function()
-    require("json_tsdb_plot").setup()
+    require("json_plot").setup()
   end,
 }
 ```
 
+For local development:
+
 ```lua
--- Or from GitHub (once published):
 {
-  "yourusername/json-tsdb-plot.nvim",
+  dir = "~/git/neovim-json-visualizer",
   config = function()
-    require("json_tsdb_plot").setup()
+    require("json_plot").setup()
   end,
 }
 ```
@@ -42,9 +42,9 @@ A Neovim plugin that reads JSON files with time-series data and renders interact
 
 ```lua
 use {
-  "yourusername/json-tsdb-plot.nvim",
+  "pradhyu/neovim-json-visualizer",
   config = function()
-    require("json_tsdb_plot").setup()
+    require("json_plot").setup()
   end,
 }
 ```
@@ -54,13 +54,13 @@ use {
 Add the plugin directory to your runtimepath:
 
 ```vim
-set runtimepath+=~/git/jaeger
+set runtimepath+=~/git/neovim-json-visualizer
 ```
 
 Then in your `init.lua`:
 
 ```lua
-require("json_tsdb_plot").setup()
+require("json_plot").setup()
 ```
 
 ## Quick Start
@@ -87,10 +87,10 @@ require("json_tsdb_plot").setup()
 }
 ```
 
-### 2. Create a config file (`.tsdb_plot.lua`)
+### 2. Create a config file (`.json_plot.lua`)
 
 ```lua
-local tl = require("json_tsdb_plot.builder")
+local tl = require("json_plot.builder")
 
 tl.title("Patient Timeline")
 
@@ -114,13 +114,13 @@ tl.sort("start")
 ### 3. Open the chart
 
 ```vim
-:TsdbPlot data.json .tsdb_plot.lua
+:JsonPlot data.json .json_plot.lua
 ```
 
-Or if `.tsdb_plot.lua` is in the same directory as the JSON file:
+Or if `.json_plot.lua` is in the same directory as the JSON file:
 
 ```vim
-:TsdbPlot data.json
+:JsonPlot data.json
 ```
 
 ## Config API Reference
@@ -128,7 +128,7 @@ Or if `.tsdb_plot.lua` is in the same directory as the JSON file:
 ### Plot Definition
 
 ```lua
-local tl = require("json_tsdb_plot.builder")
+local tl = require("json_plot.builder")
 
 tl.plot("jsonPath")           -- Create series from JSON key (supports dot notation)
   :label("fieldName")         -- Label field (string or function)
@@ -158,10 +158,14 @@ tl.date_format("%Y-%m-%d")    -- Date parsing format
 | `q` | Close the chart |
 | `+` / `=` | Zoom in |
 | `-` | Zoom out |
+| `p` | Toggle track packing |
+| `o` | Toggle overlap panel |
 | `s` | Cycle sort order |
+| `c` | Toggle gap collapse |
 | `f` | Filter by date range |
 | `F` | Filter by tag/series |
 | `r` | Reset all filters & zoom |
+| `w` | Export to Markdown |
 | `Enter` | Show entry details |
 | `?` | Show help |
 
@@ -169,29 +173,31 @@ tl.date_format("%Y-%m-%d")    -- Date parsing format
 
 | Command | Description |
 |---------|-------------|
-| `:TsdbPlot <data.json> [config.lua]` | Open timeline chart |
-| `:TsdbPlotReload` | Hot-reload plugin (for development) |
+| `:JsonPlot <data.json> [config.lua]` | Open timeline chart (alias: `:TsdbPlot`) |
+| `:JsonPlotReload` | Hot-reload plugin for development (alias: `:TsdbPlotReload`) |
 
 ## Config File Discovery
 
 The plugin looks for a config file in this order:
 
-1. **Explicit argument**: `:TsdbPlot data.json my_config.lua`
-2. `.tsdb_plot.lua` in the same directory as the JSON file
-3. `tsdb_plot.config.lua` in the same directory
-4. `.timeline.lua` in the same directory
-5. **Fallback**: Interactive `vim.ui.select` field selection
+1. **Explicit argument**: `:JsonPlot data.json my_config.lua`
+2. `.json_plot.lua` in the same directory as the JSON file
+3. `json_plot.config.lua` in the same directory
+4. `.tsdb_plot.lua` in the same directory
+5. `tsdb_plot.config.lua` in the same directory
+6. `.timeline.lua` in the same directory
+7. **Fallback**: Interactive `vim.ui.select` field selection
 
 ## Development
 
 ### Hot Reload
 
-During development, use `:TsdbPlotReload` to clear Lua module caches and re-require all plugin modules without restarting Neovim.
+During development, use `:JsonPlotReload` to clear Lua module caches and re-require all plugin modules without restarting Neovim.
 
 ### Running Tests
 
 ```bash
-nvim --headless -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/minimal_init.lua'}"
+nvim --headless -u tests/minimal_init.lua -c "PlenaryBustedDirectory tests/"
 ```
 
 ## Examples
@@ -207,3 +213,4 @@ Each has a matching JSON fixture in `tests/fixtures/`.
 ## License
 
 MIT
+

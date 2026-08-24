@@ -1,4 +1,4 @@
-local tl = require("json_tsdb_plot.builder")
+local tl = require("json_plot.builder")
 
 tl.title("Patient Timeline — Maria Garcia (MBR-2024-44821)")
 

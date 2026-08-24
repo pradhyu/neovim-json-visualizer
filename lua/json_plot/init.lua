@@ -1,17 +1,17 @@
--- lua/json_tsdb_plot/init.lua
--- Main entry point for json-tsdb-plot.nvim
+-- lua/json_plot/init.lua
+-- Main entry point for json-plot.nvim
 -- Orchestrates: config loading → JSON parsing → processing → rendering
--- Supports hot-reloading for development via :TsdbPlotReload
+-- Supports hot-reloading for development via :JsonPlotReload
 
 local M = {}
 
 --- Setup the plugin with user options
 --- @param opts table|nil  User configuration overrides
 function M.setup(opts)
-  local config = require("json_tsdb_plot.config")
+  local config = require("json_plot.config")
   config.setup(opts)
 
-  local highlights = require("json_tsdb_plot.highlights")
+  local highlights = require("json_plot.highlights")
   highlights.setup()
 end
 
@@ -19,11 +19,11 @@ end
 --- @param data_path string       Path to the JSON data file
 --- @param config_path string|nil Path to the Lua config file (optional)
 function M.open(data_path, config_path)
-  local builder = require("json_tsdb_plot.builder")
-  local parser = require("json_tsdb_plot.parser")
-  local processor = require("json_tsdb_plot.processor")
-  local renderer = require("json_tsdb_plot.renderer")
-  local ui = require("json_tsdb_plot.ui")
+  local builder = require("json_plot.builder")
+  local parser = require("json_plot.parser")
+  local processor = require("json_plot.processor")
+  local renderer = require("json_plot.renderer")
+  local ui = require("json_plot.ui")
 
   -- Expand paths
   data_path = vim.fn.expand(data_path)
@@ -38,7 +38,7 @@ function M.open(data_path, config_path)
     local ok, err = pcall(dofile, config_path)
     if not ok then
       vim.notify(
-        "json-tsdb-plot: Error loading config '" .. config_path .. "': " .. tostring(err),
+        "json-plot: Error loading config '" .. config_path .. "': " .. tostring(err),
         vim.log.levels.ERROR
       )
       return
@@ -49,7 +49,7 @@ function M.open(data_path, config_path)
   local json_data, parse_err = parser.read_file(data_path)
   if not json_data then
     vim.notify(
-      "json-tsdb-plot: " .. tostring(parse_err),
+      "json-plot: " .. tostring(parse_err),
       vim.log.levels.ERROR
     )
     return
@@ -74,13 +74,13 @@ end
 --- @param global table           Global builder settings
 --- @param data_path string|nil   Data file path
 function M._process_and_render(json_data, plots, global, data_path)
-  local processor = require("json_tsdb_plot.processor")
-  local renderer = require("json_tsdb_plot.renderer")
+  local processor = require("json_plot.processor")
+  local renderer = require("json_plot.renderer")
 
   local entries = processor.process(json_data, plots, global)
 
   if #entries == 0 then
-    vim.notify("json-tsdb-plot: No entries produced. Check your config field mappings.", vim.log.levels.WARN)
+    vim.notify("json-plot: No entries produced. Check your config field mappings.", vim.log.levels.WARN)
     return
   end
 
@@ -91,7 +91,7 @@ function M._process_and_render(json_data, plots, global, data_path)
   end
 
   -- Sort entries by default sort order
-  local cfg = require("json_tsdb_plot.config").get()
+  local cfg = require("json_plot.config").get()
   local sort_order = global.sort or cfg.default_sort or "start_desc"
   table.sort(entries, function(a, b)
     if sort_order == "start_desc" then
@@ -118,11 +118,11 @@ end
 --- @param global table           Global builder settings
 --- @param data_path string|nil   Data file path
 function M._interactive_open(json_data, global, data_path)
-  local parser = require("json_tsdb_plot.parser")
-  local processor = require("json_tsdb_plot.processor")
-  local renderer = require("json_tsdb_plot.renderer")
-  local ui = require("json_tsdb_plot.ui")
-  local builder = require("json_tsdb_plot.builder")
+  local parser = require("json_plot.parser")
+  local processor = require("json_plot.processor")
+  local renderer = require("json_plot.renderer")
+  local ui = require("json_plot.ui")
+  local builder = require("json_plot.builder")
 
   -- If root is a flat array, use it directly
   if vim.islist(json_data) then
@@ -162,7 +162,7 @@ function M._interactive_open(json_data, global, data_path)
     table.sort(array_keys)
 
     if #array_keys == 0 then
-      vim.notify("json-tsdb-plot: No arrays found in JSON root", vim.log.levels.ERROR)
+      vim.notify("json-plot: No arrays found in JSON root", vim.log.levels.ERROR)
       return
     end
 
@@ -206,12 +206,14 @@ function M._interactive_open(json_data, global, data_path)
 end
 
 --- Auto-detect config file in the same directory as the data file
---- Looks for .tsdb_plot.lua or tsdb_plot.config.lua
+--- Looks for .json_plot.lua, json_plot.config.lua, etc.
 --- @param data_path string  Path to the JSON data file
 --- @return string|nil       Path to the config file, or nil
 function M._find_config(data_path)
   local dir = vim.fn.fnamemodify(data_path, ":h")
   local candidates = {
+    ".json_plot.lua",
+    "json_plot.config.lua",
     ".tsdb_plot.lua",
     "tsdb_plot.config.lua",
     ".timeline.lua",
@@ -229,23 +231,23 @@ end
 --- Hot-reload: clear all cached modules and re-require
 --- Use this during development to pick up code changes without restarting Neovim
 function M.reload()
-  -- Clear all json_tsdb_plot modules from Lua's package cache
+  -- Clear all json_plot modules from Lua's package cache
   local cleared = {}
   for name, _ in pairs(package.loaded) do
-    if name:match("^json_tsdb_plot") then
+    if name:match("^json_plot") or name:match("^json_tsdb_plot") then
       package.loaded[name] = nil
       table.insert(cleared, name)
     end
   end
 
   -- Re-require the main module
-  local plugin = require("json_tsdb_plot")
+  local plugin = require("json_plot")
 
   -- Re-setup highlights
-  require("json_tsdb_plot.highlights").setup()
+  require("json_plot.highlights").setup()
 
   vim.notify(
-    "json-tsdb-plot: Reloaded " .. #cleared .. " module(s)",
+    "json-plot: Reloaded " .. #cleared .. " module(s)",
     vim.log.levels.INFO
   )
 

@@ -21,4 +21,4 @@ for _, path in ipairs(plenary_paths) do
 end
 
 -- Setup the plugin
-require("json_tsdb_plot").setup()
+require("json_plot").setup()

@@ -1,7 +1,7 @@
---- JSON parsing and field detection for json-tsdb-plot
+--- JSON parsing and field detection for json-plot.nvim
 local M = {}
 
-local utils = require("json_tsdb_plot.utils")
+local utils = require("json_plot.utils")
 
 --- Read and parse JSON file
 function M.read_file(path)

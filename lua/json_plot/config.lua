@@ -1,4 +1,4 @@
---- Default configuration and merge logic for json-tsdb-plot
+--- Default configuration and merge logic for json-plot.nvim
 local M = {}
 
 M.defaults = {

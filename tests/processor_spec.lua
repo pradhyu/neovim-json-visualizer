@@ -1,13 +1,13 @@
 -- tests/processor_spec.lua
--- Tests for json_tsdb_plot.processor module
+-- Tests for json_plot.processor module
 
 describe("processor", function()
-  local processor = require("json_tsdb_plot.processor")
+  local processor = require("json_plot.processor")
   local builder
 
   before_each(function()
-    package.loaded["json_tsdb_plot.builder"] = nil
-    builder = require("json_tsdb_plot.builder")
+    package.loaded["json_plot.builder"] = nil
+    builder = require("json_plot.builder")
     builder.reset()
   end)
 
@@ -92,7 +92,7 @@ describe("processor", function()
       data.items[1].date = "2024-01-01"
       local entries = processor.process(data, builder.get_plots(), builder.get_global())
       assert.are.equal(1, #entries)
-      assert.is_true(entries[1].label:find("Test (42)") ~= nil)
+      assert.is_true(entries[1].label:find("Test (42)", 1, true) ~= nil)
     end)
 
     it("applies filter predicate", function()

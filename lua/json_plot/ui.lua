@@ -1,5 +1,5 @@
--- lua/json_tsdb_plot/ui.lua
--- Interactive UI fallbacks and multi-selection menus for json-tsdb-plot.
+-- lua/json_plot/ui.lua
+-- Interactive UI fallbacks and multi-selection menus for json-plot.
 
 local M = {}
 
@@ -71,7 +71,7 @@ function M.select_multiple_sources(array_keys, callback)
           end
         end
         if #result == 0 then
-          vim.notify("json-tsdb-plot: Please select at least one array", vim.log.levels.WARN)
+          vim.notify("json-plot: Please select at least one array", vim.log.levels.WARN)
           return show_menu()
         end
         return callback(result)
@@ -105,7 +105,7 @@ function M.select_fields(fields, opts, callback)
   end
   opts = opts or {}
 
-  local schema_store = require("json_tsdb_plot.schema_store")
+  local schema_store = require("json_plot.schema_store")
   local saved_schemas = schema_store.get_matching_schemas(fields, opts.array_key, opts.file_path)
 
   if #saved_schemas > 0 then
@@ -153,7 +153,7 @@ end
 
 --- Step-by-step wizard to choose fields
 function M.prompt_fields_wizard(fields, opts, callback)
-  local schema_store = require("json_tsdb_plot.schema_store")
+  local schema_store = require("json_plot.schema_store")
   local selections = {}
   local p_prefix = (opts.array_key and opts.array_key ~= "") and ("[" .. opts.array_key .. "] ") or ""
 

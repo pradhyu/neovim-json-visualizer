@@ -1,4 +1,4 @@
-local tl = require("json_tsdb_plot.builder")
+local tl = require("json_plot.builder")
 
 tl.title("Care Coordination — Dorothy Williams (MBR-2024-55102)")
 
