@@ -4,6 +4,8 @@ A Neovim plugin that reads JSON files with time-series data and renders interact
 
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 
+![json-plot.nvim screenshot](assets/screenshot.png)
+
 ## Features
 
 - 📊 **ASCII Gantt chart** rendered with Unicode block characters and extmark colors
